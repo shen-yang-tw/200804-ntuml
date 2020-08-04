@@ -1,0 +1,162 @@
+/* FooTable NTUML Theme
+====================================*/
+.footable {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  /*color: #444444;*/
+  /*background: #efefef;*/
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+.footable.breakpoint > tbody > tr.footable-row-detail { background: #eeeeee; }
+.footable.breakpoint > tbody > tr:hover:not(.footable-row-detail) { cursor: pointer; }
+.footable.breakpoint > tbody > tr > td.footable-row-detail-cell { background: #fff; }
+
+/* Fix for detail view width too small */
+/*.footable-row-detail-name { width: 30%; }*/
+
+.footable > tbody img {
+  vertical-align: middle;
+}
+
+.footable > thead > tr > th,
+.footable > tbody > tr > th,
+.footable > thead > tr > td,
+.footable > tbody > tr > td {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.footable > thead > tr > th,
+.footable > thead > tr > td {
+  color: #696969;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/*.footable > thead > tr > th.footable-first-column,
+.footable > thead > tr > td.footable-first-column {
+  border-left: none;
+}*/
+
+.footable > tfoot > tr > th,
+.footable > tfoot > tr > td {
+  border-top: none;
+  border-left: none;
+  padding: 10px;
+}
+
+.footable > tfoot .pagination { text-align: center; }
+.footable > tfoot .pagination ul {
+  display: inline-block;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
+.footable > tfoot .pagination ul > li { display: inline; }
+.footable > tfoot .pagination ul > li > a,
+.footable > tfoot .pagination ul > li > span {
+  float: left;
+  border: 2px solid transparent;
+  margin: 0 3px;
+  color: #EA4748;
+  background: transparent;
+  padding: 1px 5px;
+  text-decoration: none;
+}
+
+.footable > tfoot .pagination ul > li.disabled > a { color: #888; }
+.footable > tfoot .pagination ul > li.active > a { color: #FFFFFF; background-color: #EA4748; }
+
+.footable > tfoot .pagination ul > li:first-child > a,
+.footable > tfoot .pagination ul > li:last-child > a,
+.footable > tfoot .pagination ul > li:first-child > span,
+.footable > tfoot .pagination ul > li:last-child > span {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+.footable-odd { background-color: #f7f7f7; }
+
+
+/* Special Styles
+====================================*/
+/* Adding Hover */
+.table-hover > tbody > tr:hover:not(.footable-row-detail) { background: #fafafa; }
+.table-hover > tbody > tr:hover:not(.footable-row-detail) > td { color: #000000; }
+
+/* Adding Border */
+.table-bordered > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td { border: 1px solid #ddd; }
+ 
+/* Adding Stripe */
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th { background-color: #f9f9f9; }
+
+/* Setup Min-Width */
+.table-custom > thead th { min-width: 80px; }
+
+
+/* Specific Style for Different Tables
+====================================*/
+/* News */
+.footable > tbody > tr > td.news-title > a { color: #696969; cursor: pointer; }
+.footable > tbody > tr > td.news-title > a:hover { color: #EA4748; }
+.footable > tbody > tr > td.news-categories { width: 100px; }
+.footable > tbody > tr > td.news-time { width: 100px; }
+
+/* Files */
+.footable > tbody > tr > td.file-number { width: 40px; }
+.footable > tbody > tr > td.file-title { width: 200px; }
+.footable > tbody > tr > td.file-type { font-size: 16px; line-height: 19px; width: 50px; }
+
+/* Core Collections */
+.footable > tbody > tr > td.core-collection-category { width: 145px; }
+.footable > tbody > tr > td.core-collection-faculty { width: 90px; }
+.footable > tbody > tr > td.core-collection-index { width: 100px; }
+.footable > tbody > tr > td.core-collection-version {width: 55px; }
+
+/* Opening Hours */
+.footable > tbody > tr > td.calendar-today { background-color: #E9F7FE; color: #5091b2; }
+.footable > tbody > tr > td.calendar-weekend { background-color: #ffe9e9; color: #de5959; }
+
+/* File Type Icons */
+.footable i.fa-file-word-o { color: #295497 }
+.footable i.fa-file-pdf-o { color: #EE0C0C }
+.footable i.fa-file-powerpoint-o { color: #D14424 }
+.footable i.fa-file-excel-o { color: #1F6E42 }
+.footable i.fa-file-o { color: #DEC14E }
+
+/* Med-Humanities */
+.footable.med-humanities > tbody > tr > td img { min-width: 150px; }
+
+/* Fee List */
+.footable > tbody > tr > td.feelist-number { width: 35px; }
+.footable > tbody > tr > td.feelist-title { width: 300px; }
+.footable > tbody > tr > td.feelist-amount { width: 35px; }
+.footable > tbody > tr > td.feelist-price { width: 95px; }
+.footable > tbody > tr > td.feelist-price2 { width: 85px; }
+.footable > tbody > tr > td.feelist-publisher { width: 100px; }
+.footable > tbody > tr > td.feelist-pubyear { width: 45px; }
+
+
+/* Misc
+====================================*/
+.sidebar > table.footable { padding-left: 0; }
