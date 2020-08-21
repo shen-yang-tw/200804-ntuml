@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html class="js csstransitions js hb-loaded" lang="zh-tw">
+<!-- 修改新增：請在以下多增加class="index" -->
+<html class="index js csstransitions js hb-loaded" lang="zh-tw">
 
 <head>
   <meta charset="utf-8">
@@ -8,15 +9,16 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <meta name="format-detection" content="telephone=no">
   <!-- Hack phone number style for MS Edge -->
-  <meta name="designer" content="楊軒羽 Shen Yang | Graphic Web Designer & Front End Developer | 前端視覺工程師">
   <title>飛資得系統科技</title>
 
+  <!-- 修改新增 -->
   <!-- UIkit CSS -->
   <link rel="stylesheet" href="css/uikit.min.css" />
   <link rel="stylesheet" href="css/tailwind.min.css" />
   <!-- UIkit JS -->
   <script src="js/uikit.min.js"></script>
   <script src="js/uikit-icons.min.js"></script>
+  <!-- 修改新增 -->
 
   <link rel="stylesheet" type="text/css" href="css/ui.css">
   <link rel="stylesheet" type="text/css" href="css/base.css">
@@ -31,15 +33,23 @@
   <link rel="stylesheet" type="text/css" href="css/footable.core.css">
   <link rel="stylesheet" type="text/css" href="css/footable.ntuml.css">
   <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
+  
+  <!-- 修改新增 -->
+  <link rel="stylesheet" type="text/css" href="css/style-new.css">
+  <!-- 修改新增 -->
 
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/ui.js"></script>
   <script type="text/javascript" src="js/flexslider-min-2.2.js"></script>
   <script type="text/javascript" src="js/custom.js"></script>
+
+  <!-- 修改新增 -->
+  <script src="js/nav-menu.js" defer></script>
   <script>
-    UIkit.icon.add('chevron-right','<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="chevron-right"><polyline fill="none" stroke="#000" stroke-width="1.03" points="7 4 13 10 7 16"></polyline></svg>');
-    UIkit.icon.add('chevron-down','<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="chevron-down"><polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg>');
+    UIkit.icon.add('chevron-right', '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="chevron-right"><polyline fill="none" stroke="#000" stroke-width="1.03" points="7 4 13 10 7 16"></polyline></svg>');
+    UIkit.icon.add('chevron-down', '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="chevron-down"><polyline fill="none" stroke="#000" stroke-width="1.03" points="16 7 10 13 4 7"></polyline></svg>');
   </script>
+  <!-- 修改新增 -->
 </head>
 
 <body class="body-wrapper">
@@ -90,6 +100,7 @@
             <!-- 導覽列 / 結束 -->
 
             <!-- 主選單 / 開始 -->
+            <!-- 修改新增：請在以下多增加class="uk-visible@m" -->
             <nav id="navigation" class="style-1 uk-visible@m">
               <div class="left-corner"></div>
               <div class="right-corner"></div>
@@ -3726,128 +3737,90 @@
                 <option value="https://ntuml.mc.ntu.edu.tw/Fpage.action?muid=372&amp;fid=158">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 中山南路進入指引</option>
               </select>
             </nav>
+
+            <!-- 修改新增 -->
             <div id="offcanvas" uk-offcanvas>
               <div class="bg-red-800 py-5 uk-offcanvas-bar">
                 <button class="uk-offcanvas-close" type="button" title="刪除" uk-close></button>
                 <ul class="pt-6 uk-nav uk-nav-default">
+                  <!-- <li class="py-1 uk-parent">
+                    <div class="flex flex-col">
+                      <a class="flex flex-1 items-center" href="#"><span class="text-white">Caption</span></a>
+                      <a class="flex flex-1 items-center" href="#"><span class="text-white">Caption</span></a>
+                      <a class="flex flex-1 items-center" href="#"><span class="text-white">Caption</span></a>
+                    </div>
+                  </li>
+                  <li class="uk-nav-divider"></li> -->
                   <li class="py-1 uk-parent">
-                    <div class="flex">
-                      <a class="flex-1 flex items-center" href="#">Caption</a>
-                      <a class="flex-1 flex items-center justify-end" href="#" title="展開/收合選單" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle'), 'hidden'); return false;"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
+                    <a class="p-0" href="#"><span class="text-white">Caption - Level 1</span></a>
+                  </li>
+                  <li class="py-1 uk-parent">
+                    <a class="p-0" href="#"><span class="text-white">Caption - Level 1</span></a>
+                  </li>
+                  <li class="py-1 uk-parent">
+                    <div class="flex justify-between">
+                      <a class="flex flex-1 items-center" href="#"><span class="text-white">Caption - Level 2</span></a>
+                      <a class="flex flex-none items-start justify-end pt-px w-16" href="javascript:void(0)" title="展開/收合選單"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
                     </div>
                     <ul class="toggle hidden uk-nav-sub">
-                      <li><a class="mx-2" href="#">Item</a></li>
-                      <li><a class="mx-2" href="#">Item</a></li>
+                      <li class="pr-5"><a href="#"><span class="text-white text-opacity-50">Item</span></a></li>
+                      <li class="pr-5"><a href="#"><span class="text-white text-opacity-50">Item</span></a></li>
                     </ul>
                   </li>
                   <li class="py-1 uk-parent">
-                    <div class="flex">
-                      <a class="flex-1 flex items-center" href="#">Caption</a>
-                      <a class="flex-1 flex items-center justify-end" href="#" title="展開/收合選單" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle'), 'hidden'); return false;"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
+                    <div class="flex justify-between">
+                      <a class="flex flex-1 items-center" href="#"><span class="text-white">Caption - Level 3</span></a>
+                      <a class="flex flex-none items-start justify-end pt-px w-16" href="javascript:void(0)" title="展開/收合選單"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
                     </div>
                     <ul class="toggle hidden uk-nav-sub">
-                      <li class="mt-0 uk-nav-header">
-                        <span>Itim</span>
-                        <ul class="uk-nav-sub">
-                          <li><a class="mx-2" href="#">Sub item</a></li>
-                          <li><a class="mx-2" href="#">Sub item</a></li>
+                      <li class="mt-0 uk-nav-header uk-parent">
+                        <div class="flex justify-between">
+                          <a class="flex flex-1 items-center" href="#"><span class="text-white">Item</span></a>
+                          <a class="flex flex-none items-start justify-end pt-px w-16" href="javascript:void(0)" title="展開/收合選單"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
+                        </div>
+                        <ul class="toggle hidden uk-nav-sub">
+                          <li class="pr-5"><a href="#"><span class="text-white text-opacity-50">Sub item</span></a></li>
+                          <li class="pr-5"><a href="#"><span class="text-white text-opacity-50">Sub item</span></a></li>
                         </ul>
                       </li>
-                      <li class="mt-0 uk-nav-header">
-                        <span>Itim</span>
-                        <ul class="uk-nav-sub">
-                          <li><a class="mx-2" href="#">Sub item</a></li>
-                          <li><a class="mx-2" href="#">Sub item</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="py-1 uk-parent">
-                    <div class="flex">
-                      <a class="flex-1 flex items-center" href="#">Caption</a>
-                      <a class="flex-1 flex items-center justify-end" href="#" title="展開/收合選單" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle'), 'hidden'); return false;"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
-                    </div>
-                    <ul class="toggle hidden uk-nav-sub">
-                      <li class="mt-0 uk-nav-header">
-                        <span>Itim</span>
-                        <ul class="uk-nav-sub">
-                          <li>
-                            <a class="mx-2" href="#">Sub item</a>
-                            <ul>
-                              <li><a class="mx-2" href="#">Sub item</a></li>
-                              <li><a class="mx-2" href="#">Sub item</a></li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a class="mx-2" href="#">Sub item</a>
-                            <ul>
-                              <li><a class="mx-2" href="#">Sub item</a></li>
-                              <li><a class="mx-2" href="#">Sub item</a></li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="mt-0 uk-nav-header">
-                        <span>Itim</span>
-                        <ul class="uk-nav-sub">
-                          <li>
-                            <a class="mx-2" href="#">Sub item</a>
-                            <ul>
-                              <li><a class="mx-2" href="#">Sub item</a></li>
-                              <li><a class="mx-2" href="#">Sub item</a></li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a class="mx-2" href="#">Sub item</a>
-                            <ul>
-                              <li><a class="mx-2" href="#">Sub item</a></li>
-                              <li><a class="mx-2" href="#">Sub item</a></li>
-                            </ul>
-                          </li>
+                      <li class="mt-0 uk-nav-header uk-parent">
+                        <div class="flex justify-between">
+                          <a class="flex flex-1 items-center" href="#"><span class="text-white">Item</span></a>
+                          <a class="flex flex-none items-start justify-end pt-px w-16" href="javascript:void(0)" title="展開/收合選單"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
+                        </div>
+                        <ul class="toggle hidden uk-nav-sub">
+                          <li class="pr-5"><a href="#"><span class="text-white text-opacity-50">Sub item</span></a></li>
+                          <li class="pr-5"><a href="#"><span class="text-white text-opacity-50">Sub item</span></a></li>
                         </ul>
                       </li>
                     </ul>
                   </li>
-                  <li class="py-1 uk-parent">
-                    <div class="flex">
-                      <a class="flex-1 flex items-center" href="#">Caption</a>
-                      <a class="flex-1 flex items-center justify-end" href="#" title="展開/收合選單" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle'), 'hidden'); return false;"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
+                  <!-- <li class="py-1 uk-parent">
+                    <div class="flex justify-between">
+                      <a class="flex flex-1 items-center" href="#"><span class="text-white">Caption - Level 4</span></a>
+                      <a class="flex flex-none items-start justify-end pt-px w-16" href="javascript:void(0)" title="展開/收合選單"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
                     </div>
                     <ul class="toggle hidden uk-nav-sub">
-                      <li><a class="mx-2" href="#">Item</a></li>
-                      <li><a class="mx-2" href="#">Item</a></li>
+                      <li class="mt-0 uk-nav-header uk-parent">
+                        <div class="flex justify-between">
+                          <a class="flex flex-1 items-center" href="#"><span class="text-white">Item</span></a>
+                          <a class="flex flex-none items-start justify-end pt-px w-16" href="javascript:void(0)" title="展開/收合選單"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
+                        </div>
+                        <ul class="toggle hidden uk-nav-sub">
+                          <li>
+                            <div class="flex justify-between">
+                              <a class="flex flex-1 items-center" href="#"><span class="text-white">Item</span></a>
+                              <a class="flex flex-none items-start justify-end pt-px w-16" href="javascript:void(0)" title="展開/收合選單"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
+                            </div>
+                            <ul class="toggle hidden uk-nav-sub">
+                              <li class="pr-5"><a href="#">Sub item</a></li>
+                              <li class="pr-5"><a href="#">Sub item</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
                     </ul>
-                  </li>
-                  <li class="py-1 uk-parent">
-                    <div class="flex">
-                      <a class="flex-1 flex items-center" href="#">Caption</a>
-                      <a class="flex-1 flex items-center justify-end" href="#" title="展開/收合選單" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle'), 'hidden'); return false;"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
-                    </div>
-                    <ul class="toggle hidden uk-nav-sub">
-                      <li><a class="mx-2" href="#">Item</a></li>
-                      <li><a class="mx-2" href="#">Item</a></li>
-                    </ul>
-                  </li>
-                  <li class="py-1 uk-parent">
-                    <div class="flex">
-                      <a class="flex-1 flex items-center" href="#">Caption</a>
-                      <a class="flex-1 flex items-center justify-end" href="#" title="展開/收合選單" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle'), 'hidden'); return false;"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
-                    </div>
-                    <ul class="toggle hidden uk-nav-sub">
-                      <li><a class="mx-2" href="#">Item</a></li>
-                      <li><a class="mx-2" href="#">Item</a></li>
-                    </ul>
-                  </li>
-                  <li class="py-1 uk-parent">
-                    <div class="flex">
-                      <a class="flex-1 flex items-center" href="#">Caption</a>
-                      <a class="flex-1 flex items-center justify-end" href="#" title="展開/收合選單" onclick="toggleAllClass(findChildren(findParent(this, 'LI'), '.toggle'), 'hidden'); return false;"><span class="toggle uk-icon" uk-icon="icon: chevron-right"></span><span class="toggle hidden uk-icon" uk-icon="icon: chevron-down"></span class="toggle"></a>
-                    </div>
-                    <ul class="toggle hidden uk-nav-sub">
-                      <li><a class="mx-2" href="#">Item</a></li>
-                      <li><a class="mx-2" href="#">Item</a></li>
-                    </ul>
-                  </li>
+                  </li> -->
                   <!-- <li class="uk-nav-divider"></li>
                   <li><a href="#">SubMenu</a></li>
                   <li><a href="#">SubMenu</a></li>
@@ -3856,6 +3829,7 @@
                 </ul>
               </div>
             </div>
+            <!-- 修改新增 -->
             <!-- 主選單 / 結束 -->
           </div>
         </div>
@@ -3981,8 +3955,8 @@
                     </li>
                   </ul>
                   <ul class="flex-direction-nav">
-                    <li><a class="flex-prev" href="#">Previous</a></li>
-                    <li><a class="flex-next" href="#">Next</a></li>
+                    <li><a class="flex flex-none-prev" href="#">Previous</a></li>
+                    <li><a class="flex flex-none-next" href="#">Next</a></li>
                   </ul>
                 </div>
               </div>
@@ -3991,7 +3965,8 @@
             <!-- Slider / 結束 -->
 
             <!-- 最新消息 / 開始 -->
-            <div class="column-two-third">
+            <!-- 修改新增：請在以下多增加class="uk-visible@s" -->
+            <div class="column-two-third uk-visible@s">
               <h5 class="line"><span>最新消息</span></h5>
               <div class="news-list">
                 <ul class="block">
@@ -4033,28 +4008,107 @@
               <div class="clearfix"></div>
             </div>
             <!-- 最新消息 / 結束 -->
-
-            <!-- 空間座位 / 開始 -->
-            <!-- <div class="column-two-third">
-              <h5 class="line"><span>空間座位</span></h5>
-              <ul class="uk-child-width-expand uk-grid uk-grid-small" uk-grid>
-                <li class="uk-flex uk-flex-nowrap uk-width-auto">
-                  <div>
-                    <h4 class="m-0 mr-2">空間1：<span class="bg-red-600 text-white px-2">12</span></h4>
-                  </div>
-                </li>
-                <li class="uk-flex uk-flex-nowrap uk-width-auto">
-                  <div>
-                    <h4 class="m-0 mr-2">空間2：<span class="bg-red-600 text-white px-2">10</span></h4>
-                  </div>
-                </li>
-              </ul>
-              <div class="clearfix"></div>
-            </div> -->
-            <!-- 空間座位 / 結束 -->
-
           </div>
           <!-- Main Content -->
+
+          <!-- 開放時間 / 開始 -->
+          <div class="column-one-third">
+            <div class="sidebar">
+              <h5 class="line"><span>開放時間</span></h5>
+              <div class="opening-hours">
+                <!-- <h6 class="today">今日：<time>8 月 4 日 (週二)</time></h6> -->
+                <h6>今日：<time>8 月 4 日 (週二)</time></h6>
+                <!-- 公告 -->
+                <div class="spacer"></div>
+                <!-- 公告 /結束 -->
+                <!-- 異動 -->
+                <!-- 異動 /結束 -->
+                <!-- 假日 -->
+                <div class="spacer"></div>
+                <div>
+                  <span style="color:#EA4748;">暑假期間 :
+                    2020/07/06 - 2020/09/13</span>
+                </div>
+                <!-- 公告 /結束 -->
+                <!-- 挑燈夜讀 -->
+                <!-- 挑燈夜讀結束 -->
+                <!-- 館別開放時間 -->
+                <div class="comments">
+                  <ul>
+                    <li>圖書館：8:00 - 21:00</li>
+                    <li>多媒體學習中心：8:30 - 21:00</li>
+                  </ul>
+                  <a href="Libopen.action" class="next more-btn" id="opening-hours-btn"><span>MORE</span></a>
+                </div>
+                <!-- 館別開放時間 /結束 -->
+              </div>
+            </div>
+          </div>
+          <!-- 開放時間 / 結束 -->
+
+          <!-- 空間座位 / 開始 -->
+          <div class="column-one-third">
+            <div class="sidebar">
+              <h5 class="line"><span>空間座位資訊</span> </h5>
+              <ul class="pt-1 uk-grid uk-grid-small uk-margin-bottom" uk-grid>
+                <li>
+                  <p class="m-0 mr-2">空間1：<span class="text-red-600 px-2">12</span></p>
+                </li>
+                <li>
+                  <p class="m-0 mr-2">空間2：<span class="text-red-600 px-2">5</span></p>
+                </li>
+                <li>
+                  <p class="m-0 mr-2">另天開了還導一人間：<span class="text-red-600 px-2">10</span></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- 空間座位 / 結束 -->
+
+          <!-- 修改新增 -->
+          <div class="column-one-third uk-hidden@s">
+            <h5 class="line"><span>最新消息</span></h5>
+            <div class="news-list">
+              <ul class="block">
+                <li>
+                  <article>
+                    <h6><a href="News!link.action?nid=732" target="_blank">臺大醫學校區論文發表榮譽榜公告(2020年08月) </a></h6>
+                    <time datetime="2020/08/01" pubdate="pubdate">2020/08/01</time>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <h6><a href="News!one.action?nid=753">轉知：臺大醫學校區研究服務課程「IPA生物分子路徑分析軟體服務介紹」教育訓練</a></h6>
+                    <time datetime="2020/07/09" pubdate="pubdate">2020/07/09</time>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <h6><a href="News!one.action?nid=752">【新訂資料庫】Access Pharmacy 藥學資料庫</a></h6>
+                    <time datetime="2020/07/02" pubdate="pubdate">2020/07/02</time>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <h6><a href="News!link.action?nid=750" target="_blank">JCR資料庫2019年資料已上線，歡迎利用！</a></h6>
+                    <time datetime="2020/06/30" pubdate="pubdate">2020/06/30</time>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <h6><a href="News!one.action?nid=747">【試用資料庫】MedOne Education醫學教育資料庫</a></h6>
+                    <time datetime="2020/06/05" pubdate="pubdate">2020/06/05</time>
+                  </article>
+                </li>
+                <li class="more-news">
+                  <a href="News.action" class="next more-btn" id="more-news-btn"><span>MORE</span></a>
+                </li>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <!-- 修改新增 -->
+
           <!-- 右常用服務 / 開始 -->
           <div class="column-one-third">
             <div class="sidebar">
@@ -4119,60 +4173,6 @@
           </div>
           <!-- 常用資源 / 結束 -->
 
-          <!-- 空間座位 / 開始 -->
-          <div class="column-one-third">
-            <div class="sidebar">
-              <h5 class="line"><span>空間座位</span> </h5>
-              <ul class="uk-grid uk-grid-small uk-margin-bottom" uk-grid>
-                <li>
-                  <p class="m-0 mr-2">空間1：<span class="bg-red-600 text-white px-2">12</span></p>
-                </li>
-                <li>
-                  <p class="m-0 mr-2">空間2：<span class="bg-red-600 text-white px-2">5</span></p>
-                </li>
-                <li>
-                  <p class="m-0 mr-2">另天開了還導一人間：<span class="bg-red-600 text-white px-2">10</span></p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- 空間座位 / 結束 -->
-
-          <!-- 開放時間 / 開始 -->
-          <div class="column-one-third">
-            <div class="sidebar">
-              <h5 class="line"><span>開放時間</span></h5>
-              <div class="opening-hours">
-                <h6 class="today">今日：<time>8 月 4 日 (週二)</time></h6>
-                <!-- 公告 -->
-                <div class="spacer"></div>
-                <div style="margin-top:10px;">
-                </div>
-                <!-- 公告 /結束 -->
-                <!-- 異動 -->
-                <!-- 異動 /結束 -->
-                <!-- 假日 -->
-                <div class="spacer"></div>
-                <div style="margin-top:10px;">
-                  <span style="color:#EA4748;">暑假期間 :
-                    2020/07/06 - 2020/09/13</span>
-                </div>
-                <!-- 公告 /結束 -->
-                <!-- 挑燈夜讀 -->
-                <!-- 挑燈夜讀結束 -->
-                <!-- 館別開放時間 -->
-                <div class="comments" style="margin-top:-20px;">
-                  <ul>
-                    <li>圖書館：8:00 - 21:00</li>
-                    <li>多媒體學習中心：8:30 - 21:00</li>
-                  </ul>
-                  <a href="Libopen.action" class="next more-btn" id="opening-hours-btn"><span>MORE</span></a>
-                </div>
-                <!-- 館別開放時間 /結束 -->
-              </div>
-            </div>
-          </div>
-          <!-- 開放時間 / 結束 -->
         </div>
       </section>
       <!-- Content / 結束 -->
@@ -4255,7 +4255,6 @@
     </div>
   </div>
 
-  <script src="js/script.js"></script>
 </body>
 
 </html>
