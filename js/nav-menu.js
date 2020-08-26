@@ -93,7 +93,7 @@ function RemoveAddClassByArray(el, classRemove, classAdd) {
   }
 }
 
-function offcanvas(btn, thisParentTagName, classThisParent, activeParentClassName, classToggle, classHiddenName, inactiveButton, subNavTagName, inactiveSubNav, classActiveName) {
+function offcanvas(btn, thisParentTagName, classThisParent, activeParentClassName, classToggle, classHiddenName, inactiveButton, inactiveSubNav, classActiveName) {
   
   const buttons = document.querySelectorAll(btn);
 
@@ -106,6 +106,8 @@ function offcanvas(btn, thisParentTagName, classThisParent, activeParentClassNam
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
 
+      //------------------------0. Basic: Close one by one ------------------------
+
       //----- Normal: Close menu one by one (Comment the codes below) -----
       //----- Accordion: open this item and close others in the meantime -----
       // Remove 'active' from all the same level parents
@@ -114,16 +116,14 @@ function offcanvas(btn, thisParentTagName, classThisParent, activeParentClassNam
       //----- Toggle ------
       toggleAllClass(findChildren(this, classToggle), classHiddenName) //Toggle this arrow btn
       findLastChild(findParent(this, thisParentTagName, '')).classList.toggle(classHiddenName) //Toggle this hidden content
-      // findParent(this, thisParentTagName, activeParentClassName).classList.toggle(classActiveName) //Toggle active
+      findParent(this, thisParentTagName, activeParentClassName).classList.toggle(classActiveName) //Toggle active
 
-      //----- Open & Close -----
+      //------------------------1. Open this & Close the other not active tree menu------------------------
+
       let open = findFirstChild(this).classList.contains(classHiddenName) //This Arrow right is hidden
-      let close = findLastChild(this).classList.contains(classHiddenName) //This Arrow down is hidden
       let activeParent = findParent(this, thisParentTagName, activeParentClassName) //This Active parent, it's object not selector
-      let subMenus = findChildren(activeParent, subNavTagName.toLowerCase() + classToggle) //All active ul.toggle
-      let openButtons = findChildren(activeParent, btn + '>:last-child') //All active Arrow down buttons
-      let closeButtons = findChildren(activeParent, btn + '>:first-child') //All active Arrow right buttons
 
+      //--Open one item then close the other not active menu ine the meantime--//
       if (open == true) {
         // RemoveAddClassByArray(activeParent, '', classActiveName) //Add the class 'active'
         activeParent.classList.add(classActiveName) //Add the class 'active'
@@ -135,17 +135,11 @@ function offcanvas(btn, thisParentTagName, classThisParent, activeParentClassNam
         // inactiveSubNav = #offcanvas li.py-1:not(.active) ul.toggle
         RemoveAddClass(inactiveSubNav, '', classHiddenName) //Hide All inactive sub menus at first
       }
-      if (close == true) {
-        RemoveAddClassByArray(subMenus, '', classHiddenName) //Hide all active subMenus
-        RemoveAddClassByArray(openButtons, '', classHiddenName) //Hide all active Arrow down buttons
-        RemoveAddClassByArray(closeButtons, classHiddenName, '') //Show all active Arrow right buttons
-        // RemoveAddClassByArray(activeParent, classActiveName, '') //Not working because 'activeParent' is object not array
-        activeParent.classList.remove(classActiveName) //Remove the class 'active'
-      }
+
     })
   }
 }
 
-if (allExist(['#offcanvas li>.flex>a:nth-child(2)', 'LI', '.uk-parent', 'py-1', '.toggle', 'hidden', '#offcanvas li.py-1:not(.active) .flex>a:nth-child(2)', 'UL', '#offcanvas li.py-1:not(.active) ul.toggle', 'active']) == true) {
-  offcanvas('#offcanvas li>.flex>a:nth-child(2)', 'LI', '.uk-parent', 'py-1', '.toggle', 'hidden', '#offcanvas li.py-1:not(.active) .flex>a:nth-child(2)', 'UL', '#offcanvas li.py-1:not(.active) ul.toggle', 'active')
+if (allExist(['#offcanvas li>.flex>a:nth-child(2)', 'LI', '.uk-parent', 'py-1', '.toggle', 'hidden', '#offcanvas li.py-1:not(.active) .flex>a:nth-child(2)', '#offcanvas li.py-1:not(.active) ul.toggle', 'active']) == true) {
+  offcanvas('#offcanvas li>.flex>a:nth-child(2)', 'LI', '.uk-parent', 'py-1', '.toggle', 'hidden', '#offcanvas li.py-1:not(.active) .flex>a:nth-child(2)', '#offcanvas li.py-1:not(.active) ul.toggle', 'active')
 }
