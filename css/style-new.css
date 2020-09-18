@@ -43,6 +43,9 @@
 .index .news-list ul li {
   padding-left: 5px;
 }
+.index .block li {
+  background-image: none;
+}
 /*--- 2020/9/17 Added--- */
 
 @media (max-width: 767px) {
